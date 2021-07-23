@@ -1,6 +1,15 @@
+{% load static %}
 <nav class="light-blue lighten-1" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">AS</a>
+    <a id="logo-container" href="#" class="brand-logo">
+      <img
+        src="{% static 'img/authentication.svg' %}"
+        alt="AS"
+        srcset=""
+        height="55"
+      />
+      <span style="margin-left: 4.5rem">AS</span>
+    </a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#">Home</a></li>
       {% if request.user.is_authenticated %}

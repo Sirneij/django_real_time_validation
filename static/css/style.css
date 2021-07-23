@@ -232,3 +232,14 @@ footer {
         max-width: 30rem;
     }
 }
+
+.brand-logo {
+    display: inline-block;
+    height: 100%;
+}
+
+.brand-logo > img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
