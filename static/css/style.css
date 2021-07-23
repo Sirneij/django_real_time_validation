@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*NAV STYLING*/
+
+.icon-block {
+    padding: 0 15px;
+}
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+.menu {
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.menu a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/*FOOTER STYLING*/
+
+footer {
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #122b40;
+    color: whitesmoke;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+/*SIGNUP FORM STYLING*/
+
+#signup-text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-weight: lighter;
+    color: #00b8d4;
+    margin-left: 5%;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.signup_form,
+.signin-form {
+    border-radius: 5px;
+    padding: 15px 15px;
+    box-shadow: 1px 2px 4px -2px;
+    margin-left: 5%;
+    width: 50%;
+}
+
+.signup-illustration {
+    width: 45%;
+}
+
+.signup-illustration img {
+    width: 70%;
+    height: 50%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+@media (max-width: 674px) {
+    .form-container {
+        flex-direction: column;
+    }
+    .signup_form,
+    .signin-form {
+        width: 90%;
+    }
+    .signup-illustration {
+        width: 90%;
+    }
+}
+.form-input-field {
+    width: 90%;
+    margin-bottom: 10px;
+}
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.loader {
+    display: none;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.loading {
+    border: 2px solid #ccc;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border-top-color: #1ecd97;
+    border-left-color: #1ecd97;
+    animation: spin 1s infinite ease-in;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sub-body {
+    margin-left: 3%;
+}
+
+.body {
+    margin: 2%;
+}
+
+.forgot-password {
+    width: 50%;
+    height: 50%;
+    margin: 10% auto;
+}
+
+.forgot-password h4 {
+    text-align: center;
+}
+
+.forgot-password-text p {
+    font-size: 18px;
+}
+
+.materialert {
+    position: relative;
+    min-width: 150px;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.1s linear;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.materialert .material-icons {
+    margin-right: 10px;
+}
+.materialert .close-alert {
+    -webkit-appearance: none;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background: 0 0;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    filter: alpha(opacity=40);
+    margin-bottom: -5px;
+    position: absolute;
+    top: 16px;
+    right: 5px;
+}
+.materialert.info {
+    background-color: #039be5;
+    color: #fff;
+}
+.materialert.success {
+    background-color: #43a047;
+    color: #fff;
+}
+.materialert.error {
+    background-color: #c62828;
+    color: #fff;
+}
+.materialert.danger {
+    background-color: #c62828;
+    color: #fff;
+}
+.materialert.warning {
+    background-color: #fbc02d;
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container,
+.container-fluid,
+.main {
+    flex-grow: 1;
+}
+
+.content {
+    width: 90%;
+    min-height: 50vh;
+    margin: 5.3rem auto;
+}
+
+@media (min-width: 500px) {
+    .content {
+        max-width: 30rem;
+    }
+}
