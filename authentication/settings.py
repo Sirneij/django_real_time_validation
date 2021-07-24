@@ -112,7 +112,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 AUTH_USER_MODEL = "accounts.User"
-LOGIN_URL = "accounts:signin"
+LOGIN_URL = "accounts:login"
 LOGOUT_URL = "accounts:logout"
 LOGOUT_REDIRECT_URL = "accounts:index"
 
