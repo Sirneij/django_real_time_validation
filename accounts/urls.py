@@ -9,4 +9,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("login", views.login_user, name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("validate-username/", views.validate_username, name="validate_username"),
+    path("validate-email/", views.validate_email, name="validate_email"),
 ]
