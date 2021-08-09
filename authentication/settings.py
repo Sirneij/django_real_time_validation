@@ -159,6 +159,12 @@ DEFAULT_FROM_EMAIL = "nelsonidogun@gmail.com"
 
 ADMINS = (("Admin", "nelsonidogun@gmail.com"),)
 
+CELERY_BROKER_URL = config("REDIS_URL", default="")
+CELERY_RESULT_BACKEND = config("REDIS_URL", default="")
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+
 import dj_database_url
 
 db_from_env = dj_database_url.config(conn_max_age=500)

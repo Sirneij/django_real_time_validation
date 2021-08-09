@@ -11,4 +11,7 @@ urlpatterns = [
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("validate-username/", views.validate_username, name="validate_username"),
     path("validate-email/", views.validate_email, name="validate_email"),
+    path("student-sign-up/", views.student_signup, name="student_signup"),
+    path("sent/", views.activation_sent_view, name="activation_sent"),
+    path("activate/<uidb64>/<token>/", views.activate, name="activate"),
 ]

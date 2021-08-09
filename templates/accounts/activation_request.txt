@@ -1,0 +1,13 @@
+{% autoescape off %}
+Hi {{ fullname }},
+    Thank you for joining us on this great platform.
+    Please click the following button to confirm your registration...
+    
+    
+    By the way, if the above button is not clickable, paste the following link in your browser.
+    http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
+               
+
+Django Authentication Webmaster
+{% endautoescape %}
+ 

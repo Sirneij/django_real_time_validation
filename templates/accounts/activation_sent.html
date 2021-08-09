@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<!-- title -->
+{% block title %} Verification email sent {% endblock title %}
+<!-- static files -->
+{% load static %}
+<!-- content starts -->
+{% block content %}
+
+<div class="row center-content">
+  <div class="col s12" style="max-width: 30rem">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Thank you for creating an account!</span>
+        <p>
+          An email has been sent to the e-mail address you provided during
+          registeration for confirmation.
+        </p>
+        <p>
+          Make sure you visit the link provided in mail as it will soon be
+          revoked.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- content ends -->
+{% endblock content %}

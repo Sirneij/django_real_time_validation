@@ -5,8 +5,8 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls.base import reverse
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from . import tasks, utils
 from .forms import LoginForm, StudentRegistrationForm
@@ -134,3 +134,26 @@ def student_signup(request):
             )
     context = {"page_title": "Student registration", "form": form}
     return render(request, "accounts/student_signup.html", context)
+
+
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = get_user_model().objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError):
+        user = None
+    # checking if the user exists, if the token is valid.
+    if user is not None and account_activation_token.check_token(user, token):
+        # if valid set active true
+        user.is_active = True
+        user.save()
+        messages.success(
+            request, f"Your email has been verified successfully! You are now able to log in."
+        )
+        return redirect("accounts:login")
+    else:
+        return render(request, "accounts/activation_invalid.html")
+
+
+def activation_sent_view(request):
+    return render(request, "accounts/activation_sent.html")
